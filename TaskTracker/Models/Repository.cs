@@ -2,11 +2,11 @@ namespace TaskTracker.Models
 {
     public class Repository
     {
-        private List<Task> _tasks = new List<Task>();
+        private List<ToDoTask> _tasks = new List<ToDoTask>();
 
         public Repository()
         {
-            _tasks.Add(new Task()
+            _tasks.Add(new ToDoTask()
             {
                 Id = 1,
                 Description = "İlk yapılacak iş.",
@@ -16,17 +16,17 @@ namespace TaskTracker.Models
             });
         }
 
-        public List<Task> GetTasks()
+        public List<ToDoTask> GetTasks()
         {
             return _tasks;
         }
 
-        public Task GetTaskById(int id)
+        public ToDoTask GetTaskById(int id)
         {
             return _tasks.FirstOrDefault(x => x.Id == id);
         }
 
-        public void AddTask(Task task)
+        public void AddTask(ToDoTask task)
         {
             task.Id = _tasks.Count + 1;
             task.Description = "";
@@ -36,7 +36,7 @@ namespace TaskTracker.Models
             _tasks.Add(task);
         }
 
-        public void UpdateTask(Task task)
+        public void UpdateTask(ToDoTask task)
         {
             var existingTask = GetTaskById(task.Id);
             if (existingTask != null)

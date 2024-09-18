@@ -1,6 +1,6 @@
 namespace TaskTracker.Models
 {
-    public class Task
+    public class ToDoTask
     {
         public int Id { get; set; }
         public string? Description { get; set; }

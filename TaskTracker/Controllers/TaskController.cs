@@ -29,14 +29,14 @@ namespace TaskTracker.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateTask(Models.Task task)
+        public IActionResult CreateTask(ToDoTask task)
         {   
             _repository.AddTask(task);
             return RedirectToAction("Index");
         }
 
         [HttpPost]
-        public IActionResult EditTask(Models.Task task)
+        public IActionResult EditTask(ToDoTask task)
         {
             _repository.UpdateTask(task);
             return RedirectToAction("Index");
